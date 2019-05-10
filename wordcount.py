@@ -60,12 +60,13 @@ def counts_helper(filename):
             else:
                 counts[word] = 1
         return counts
+        print counts
 
 ##print_top
 def print_top(filename):
     word_counts = counts_helper(filename)
     sorted_counts = [k+":"+str(v) for k,v in sorted(word_counts.iteritems(), key=lambda(k,v): (-v,k))]
-    print sorted_counts
+    
     if len(sorted_counts) >=20:
         top_20 = sorted_counts[:20]
     else:
